@@ -1,0 +1,19 @@
+.buttonFood{
+    background: #282c34;
+    color: white;    
+    padding: 5%;
+    width: 50%;
+    height: 50%;
+    font-size: 20px;
+    margin-top: 10%
+}
+.buttonDay{
+    background: #282c34;
+    color: white;    
+    padding: 4%;
+    width: 25%;
+    height: 25%;
+    max-height: 85px;
+    font-size: 14px;
+    display: block;
+}

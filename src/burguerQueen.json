@@ -1,0 +1,72 @@
+{
+    "menuDesayuno": [
+        {"item": "Cafe Americano",
+        "Precio":500},
+        {"item":"Cafe Con Leche",
+        "Precio": 700},
+        {"item":"Jugo Natural",
+        "Precio":700},
+        {"item":"Sandwich Jamon/Queso",
+         "Precio": 1000}],
+
+    "menuDia":{
+        "HamburguesasSimples":[
+            {"item":"Res Simple Sola",
+            "Precio":1500},
+            {"item": "Res Simple c/Huevo",
+            "Precio": 2000},
+            {"item": "Res Simple c/Queso",
+            "Precio":2000},
+            {"item":"Pollo Simple Sola",
+            "Precio":1500},
+            {"item": "Pollo Simple c/Huevo",
+             "Precio": 2000},
+            {"item": "Pollo Simple c/Queso",
+            "Precio":2000},
+            {"item":"Vegetariana Simple Sola",
+            "Precio":1500},
+            {"item": "Vegetariana Simple c/Huevo",
+            "Precio": 2000},
+            {"item": "Vegetariana Simple c/Queso",
+            "Precio":2000}
+        ],
+        "HamburguesasDobles":[
+            {"item":"Res Doble Sola",
+             "Precio":2500},
+            {"item": "Res Doble c/Huevo",
+             "Precio": 3000},
+            {"item": "Res Doble c/Queso",
+             "Precio":3000},
+            {"item":"Pollo Doble Sola",
+             "Precio":2500},
+            {"item": "Pollo Doble c/Huevo",
+             "Precio": 3000},
+            {"item": "Pollo Doble c/Queso",
+             "Precio":3000},
+            {"item":"Vegetariana Doble Sola",
+             "Precio":2500},
+            {"item": "Vegetariana Doble c/Huevo",
+             "Precio": 3000},
+            {"item": "Vegetariana Doble c/Queso",
+             "Precio":3000}
+        ],            
+        "Acopañamientos":[
+             {"item":"Papas Fritas",
+                "Precio": 500}, 
+            {"item":"Onion Rings",
+                "Precio": 500
+            }
+        ],
+
+        "Bebidas":[
+            {"item":"Agua 500ml",
+            "Precio": 500},
+            {"item":"Agua 750ml",
+            "Precio": 800},
+            {"item":"Gaseosa 500ml",
+            "Precio": 700},
+            {"item":"Gaseosa 750ml",
+            "Precio": 1000}
+        ]
+    }    
+}

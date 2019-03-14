@@ -1,0 +1,11 @@
+.nav-button {
+    background-color: #282c34;
+    color: white;
+    padding: 1%;
+    width: 100%;
+    font-size: 20px;
+  }
+.nav{
+  background-color: #4d515a;
+  padding: 1%;
+}

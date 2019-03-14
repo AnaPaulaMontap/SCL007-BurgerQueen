@@ -1,0 +1,32 @@
+html, body, #root {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .SplitPane {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .SplitPane-left {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background: grey;
+  }
+  
+  .SplitPane-right {
+    float: left;
+    width: 70%;
+    height: 100%;
+    background: lightgray;
+   
+  }
+  
+ .rightFlex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+
+  

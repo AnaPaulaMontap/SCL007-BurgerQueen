@@ -1,0 +1,121 @@
+{
+    "menuDesayuno": {
+        "CafeAmericano": {
+                "Precio":500
+        },
+        "Cafe Con Leche":{
+                "Precio": 700
+                  
+        },
+        "Jugo Natural":{
+            "Precio":700
+        },
+        "Sandwich Jamon/Queso": {
+            "Precio": 1000
+        }
+    },
+    "menuDia":{
+        "Hamburguesas":{
+            "Res":{
+                "Simple":{
+                    "Sola":{
+                        "Precio": 1500
+                    },
+                    "C/Huevo":{
+                        "Precio": 2000
+                    },
+                    "C/Queso":{
+                        "Precio": 2000
+                    }
+                },
+                "Doble":{
+                    "Sola":{
+                        "Precio": 2500
+                    },
+                    "C/Huevo":{
+                        "Precio": 3000
+                    },
+                    "C/Queso":{
+                        "Precio": 3000
+                    }
+                }
+            },
+            "Pollo":{
+                "Simple":{
+                    "Sola":{
+                        "Precio": 1500
+                    },
+                    "C/Huevo":{
+                        "Precio": 2000
+                    },
+                    "C/Queso":{
+                        "Precio": 2000
+                    }
+                },
+                "Doble":{
+                    "Sola":{
+                        "Precio": 2500
+                    },
+                    "C/Huevo":{
+                        "Precio": 3000
+                    },
+                    "C/Queso":{
+                        "Precio": 3000
+                    }
+                }
+            },
+            "Vegetariana":{
+                "Simple":{
+                    "Sola":{
+                        "Precio": 1500
+                    },
+                    "C/Huevo":{
+                        "Precio": 2000
+                    },
+                    "C/Queso":{
+                        "Precio": 2000
+                    }
+                },
+                "Doble":{
+                    "Sola":{
+                        "Precio": 2500
+                    },
+                    "C/Huevo":{
+                        "Precio": 3000
+                    },
+                    "C/Queso":{
+                        "Precio": 3000
+                    }
+                }
+            }
+        },
+        "Acopañamientos":{
+            "Papas Fritas":{
+                "Precio": 500
+            },
+            "Onion Rings":{
+                "Precio": 500
+            }
+        },
+        "Bebidas":{
+            "Agua":{
+                "500ml":{
+                    "Precio": 500
+                },
+                "750ml":{
+                    "Precio": 800
+                }
+            },
+            "Gaseosas":{
+                "500ml":{
+                    "Precio": 700
+                },
+                "750ml":{
+                    "Precio": 1000
+                }
+            }
+        }
+
+    }
+
+}
