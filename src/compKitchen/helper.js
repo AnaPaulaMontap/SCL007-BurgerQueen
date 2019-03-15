@@ -30,19 +30,20 @@ class HelperKitchen extends Component {
         let arrOrder = this.state.orderKitchen.map((itemOrder) => {
           return (itemOrder.order)
         })
-
+        
         this.setState({
           ...this.state,
           nameOrder: this.state.nameOrder.concat(arrName),
           itemOrder: this.state.itemOrder.concat(arrOrder),
         });
+        console.log(arrOrderComplete)
       })
     }); 
 
     
   }
   render() {
-    
+
     let listOrder = this.state.itemOrder.flat().map((item)=>{
       return (<li>{item}</li>)
     })
