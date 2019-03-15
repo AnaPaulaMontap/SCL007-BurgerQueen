@@ -1,62 +1,77 @@
-import React from 'react'
-import  {database} from '../provider.js'
+import React, {Component} from 'react'
+import {database} from '../provider.js'
 import './helpers.css'
 
-/*
 class HelperKitchen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       orderKitchen: [],
-      nameOrder:[],
-      itemOrder:[],
+      nameOrder: [],
+      itemOrder: [],
     }
-
-    this.componentDidmount = this.componentDidmount.bind(this);
+  
   }
 
-componentDidmount() {
-
- database.child('BQKitchen').once('value', (snapshot) => {
+  componentDidMount() {
+    database.child('BQKitchen').on('value', (snapshot) => {
       let key = snapshot.val();
-      for (let read in key){
+      const arrOrderComplete = [];
+      for (let read in key) {
+          arrOrderComplete.push(key[read])
+      }
+      this.setState({
+        ...this.state,
+        orderKitchen: arrOrderComplete
+      },()=>{
+        let arrName = this.state.orderKitchen.map((itemOrder) => {
+          return (itemOrder.name)
+        })
+        let arrOrder = this.state.orderKitchen.map((itemOrder) => {
+          return (itemOrder.order)
+        })
+
         this.setState({
           ...this.state,
-          orderKitchen: this.state.orderKitchen.push(key[read])
-        })
-      }
-    }),
-  
-    this.setState({
-      ...this.state,
-      nameOrder: this.state.nameOrder.push(this.state.orderKitchen.map((itemOrder) => {
-        return (itemOrder.name)
-      })),
-      itemOrder: this.state.itemOrder.push(this.state.orderKitchen.map((itemOrder) => {
-        return (itemOrder.order)
-      }))
-    }),
+          nameOrder: this.state.nameOrder.concat(arrName),
+          itemOrder: this.state.itemOrder.concat(arrOrder),
+        });
+      })
+    }); 
+
+    
   }
+  render() {
+    
+    let listOrder = this.state.itemOrder.flat().map((item)=>{
+      return (<li>{item}</li>)
+    })
 
-  render(){ 
-   return(
-    <div className="orderKitchen">
-    <p>Nombre:{this.state.nameOrder}</p>
-    <p>Item:{this.setState.itemOrder}</p>
-    </div>
-    ) 
+    return (       
+      <div className = "orderKitchen" key={this.state.nameOrder}>
+        <p> Nombre: {this.state.nameOrder} </p>
+        <p> Item:</p>
+        <ul>{listOrder}</ul>
+      </div>
+    )
 
+  }
 }
-}
-*/
+export default HelperKitchen
+
+
+
+
+/*
 function HelperKitchen(){  
   
- database.child('BQKitchen').once('value', (snapshot) => {
+ database.once('value', (snapshot) => {
   const orderKitchen=[];
   let snapKey = snapshot.val();
       for (let read in snapKey){
           orderKitchen.push(snapKey[read])
       }  
+
    orderKitchen.map((itemOrder) => {
        
         let name = itemOrder.name  
@@ -74,7 +89,4 @@ function HelperKitchen(){
     )
       
 
-}
-export default HelperKitchen
-
-
+} */
