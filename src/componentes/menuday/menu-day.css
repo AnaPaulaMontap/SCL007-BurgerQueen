@@ -17,3 +17,13 @@
     font-size: 14px;
     display: block;
 }
+
+.buttonDay:hover {
+    background-color: #a6cb12;
+    color: black
+  }
+
+.buttonFood:hover{
+    background-color: #a6cb12;
+    color: black
+}

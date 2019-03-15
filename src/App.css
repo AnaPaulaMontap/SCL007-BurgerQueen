@@ -32,3 +32,10 @@
     transform: rotate(360deg);
   }
 }
+.App-buttons{
+    background: #282c34;
+    color: white;    
+    padding: 5%;
+    width: 50%;
+    height: 50%;
+}

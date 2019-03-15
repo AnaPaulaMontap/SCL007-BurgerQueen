@@ -2,10 +2,21 @@
     background-color: #282c34;
     color: white;
     padding: 1%;
-    width: 100%;
     font-size: 20px;
+    width: 33%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-decoration: none
   }
 .nav{
-  background-color: #4d515a;
+  background-color: #d9d9d9;
   padding: 1%;
+  width: 100%;
+  display: flex;
+}
+
+.logo{
+  width:20%;
+  display:block;
 }

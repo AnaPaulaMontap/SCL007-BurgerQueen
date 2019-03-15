@@ -1,132 +1,43 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+import { BrowserRouter, Route, Switch , Redirect} from 'react-router-dom';
 import './App.css';
 import NavBar from './componentes/nav-bar/nav-bar.js'
-import SplitPane from './componentes/columns/columnsPrice.js'
-import Toogle from './componentes/buttons/menubutton.js'
-import NameForm from './componentes/nameClient/nameClient.js'
-import MenuBreakfast from './componentes/menuday/menu-breakfast.js'
-import MenuDay from './componentes/menuday/menu-allday';
+import menu from'./burguerQueen.json'
+import Steward from './Steward'
+import Kitchen from './Kitchen';
 
 
 class App extends Component {
+/*
   constructor(props) {
-    super(props)
-    this.state = {
-    takeOrder:{
-        order: false,
-        orderD: false,
-        nameClient:'',
-        stateOrder:[],
-        menuBreakfast: true,
-        menuAllday: true,
-        totalAccount: 0,
-      },
-    menuB: props.menu.menuDesayuno,
-    menuD: props.menu.menuDia
-  }
-    
-    this.handleChange= this.handleChange.bind(this); 
-    this.handleClickDay = this.handleClickDay.bind(this); 
-    this.handleClickBreakfast = this.handleClickBreakfast.bind(this); 
-    this.handleInputChange = this.handleInputChange.bind(this);
-    
+    super(props);
+    this.state = {isToggleOn: true};
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleChange(event){
-    this.setState({
-      ...this.state,
-      takeOrder:{
-        ...this.state.takeOrder,
-        nameClient: event.target.value
-      }});
-  }
-  
-  handleClickDay(){
-         this.setState({
-        ...this.state,
-        takeOrder:{
-          ...this.state.takeOrder,
-        menuBreakfast : false,
-        menuAllday : false,
-        orderD: this.state.menuD,
-      }});
-      
-  }
-
-handleClickBreakfast(){
-    this.setState({
-   ...this.state,
-   takeOrder:{
-     ...this.state.takeOrder,
-   menuAllday : false,
-   menuBreakfast : false,
-   order: this.state.menuB
-  }});
-}
-
-handleInputChange(event) {
-  let name = event.target.getAttribute('product')
-  let value = Number(event.target.getAttribute('value'))
-  const newItem = []
- 
- 
-  newItem.push({
-    item: name,
-    price: value
-  })
-
-
-  this.setState({
-    ...this.state,
-   takeOrder:{
-     ...this.state.takeOrder,
-    stateOrder: this.state.takeOrder.stateOrder.concat(newItem),
-    totalAccount:  this.state.takeOrder.totalAccount + value,
-    }
-    
-})
-}
-
-render() {
-  let order = this.state.takeOrder.stateOrder.map((itemOrder)=>{
-  
-    return <p> {itemOrder.item} ... {itemOrder.price}</p>
-  })
-
-
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  } */
+  render() {
     return (
-      <div className="App">
-        <NavBar className="App-header"/>
-        <NameForm
-        onChange={this.handleChange}
-        />
-        <SplitPane
-          left={
-            <div>
-            <p>Resumen de Pedido</p>
-            <p>Cliente:{' '}{this.state.takeOrder.nameClient.toLocaleUpperCase()}</p>  
-            <p>{order}</p>
-            <footer>
-              <button> Total: ${this.state.takeOrder.totalAccount}</button>
-              <button> Enviar a Cocina</button>               
-            </footer>            
-            </div>
-          }  
-          right={
-            <div className="rightFlex">
-            <Toogle toogleOn={this.state.takeOrder.menuBreakfast} onClick={this.handleClickBreakfast} children='Menú Desayuno'/>
-            <Toogle toogleOn={this.state.takeOrder.menuAllday} onClick={this.handleClickDay} children='Menú del Día'/> 
-            <MenuBreakfast object={this.state.takeOrder.order} onClickButtons={this.handleInputChange}/>  
-            <MenuDay object={this.state.takeOrder.orderD} onClickButtons={this.handleInputChange} />  
-            
-            </div>
-          }/>
-            
-        
-          
-       
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar className="App-header"/>         
+          <Switch>           
+            <Route
+              exact
+              path="/Steward"
+              render={() => <Steward menu={menu}/>} />
+            <Route
+              exact
+              path="/Kitchen"
+              render={() => <Kitchen/>} />                     
+          <Redirect path="*" to="/Steward"></Redirect>      
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

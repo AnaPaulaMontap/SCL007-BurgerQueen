@@ -1,28 +1,22 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './nav-bar.css';
+import logo1 from '../imagenes/BQ.png'
 
-class NavBar extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {isToggleOn: true};
-      this.handleClick = this.handleClick.bind(this);
-    }
-  
-    handleClick() {
-      this.setState(state => ({
-        isToggleOn: !state.isToggleOn
-      }));
-    }
-  
+
+  class NavBar extends Component {
     render() {
       return (
-        <div className="nav" >
-         <button className="nav-button" onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'TOMA DE PEDIDOS' : 'COCINA'}
-        </button>
-      </div>
+       
+          <div className="nav">
+            <Link to="/Steward" className="nav-button">TOMA DE PEDIDOS</Link>
+            <img className="logo" src={logo1} alt="logo1"></img>          
+            <Link to="/Kitchen" className="nav-button">COCINA</Link>
+          </div>
+       
       );
     }
   }
+     
 
   export default NavBar
