@@ -95,7 +95,9 @@ handleFirebase(){
 
   const order = {
    name: this.state.takeOrder.nameClient,
-   order: this.state.takeOrder.stateOrder
+   order: this.state.takeOrder.stateOrder.map((itemOrder)=>{  
+    return (itemOrder.item)
+  }) 
   }; 
   
   var newPostKey = database.push().key;
@@ -125,7 +127,7 @@ render() {
             <div>
             <p>Resumen de Pedido</p>
             <p>Cliente:{' '}{this.state.takeOrder.nameClient.toLocaleUpperCase()}</p>  
-            <p>{order}</p>
+            <p key={order}>{order}</p>
             <footer>
               <button className="App-buttons">Total: ${this.state.takeOrder.totalAccount}</button>
               <button className="App-buttons" onClick={this.handleFirebase}>Enviar a Cocina</button>               

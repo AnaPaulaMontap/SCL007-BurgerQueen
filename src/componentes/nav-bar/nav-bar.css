@@ -2,12 +2,12 @@
     background-color: #282c34;
     color: white;
     padding: 1%;
-    font-size: 20px;
     width: 33%;
     display: block;
     margin: auto;
     text-align: center;
-    text-decoration: none
+    text-decoration: none;
+    font-size: calc(10px + 2vmin);
   }
 .nav{
   background-color: #d9d9d9;
@@ -15,7 +15,10 @@
   width: 100%;
   display: flex;
 }
-
+.nav-button:focus{
+  background-color: #a6cb12;
+  color: black
+}
 .logo{
   width:20%;
   display:block;

@@ -1,13 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 //import logo from './logo.svg';
 import './App.css';
+import HelperKitchen from './compKitchen/helper';
 
-function Kitchen (){
+class Kitchen extends Component {
+    render(){
     return (
-        <div>
-            <p>Esto es la cocina</p>
+        <div className="App-header">
+        <HelperKitchen/>
         </div>
     )
+    }
 }
 
 export default Kitchen;
