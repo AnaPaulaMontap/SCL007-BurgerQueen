@@ -4,7 +4,7 @@ import './nameClient.css'
 
 function NameForm (props) {
       return (
-        <div className="Client">     
+        <div className="Client col">     
           <form>
           <label>
             Atendiendo a: 

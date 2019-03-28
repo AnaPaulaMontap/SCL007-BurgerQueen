@@ -39,3 +39,7 @@
     width: 50%;
     height: 50%;
 }
+
+.in-between{
+  display: flex;
+}

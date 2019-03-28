@@ -1,5 +1,12 @@
 .orderKitchen{
     border: 2px solid;
     padding: 2%;
-    
+    display: inline-block;
+    margin: 2% 2%;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.orderKitchen:hover{
+    background-color: lightyellow;
+    color: black;
 }

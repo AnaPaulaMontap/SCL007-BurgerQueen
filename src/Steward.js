@@ -7,6 +7,7 @@ import Toogle from './componentes/buttons/menubutton.js'
 import NameForm from './componentes/nameClient/nameClient.js'
 import MenuBreakfast from './componentes/menuday/menu-breakfast.js'
 import MenuDay from './componentes/menuday/menu-allday';
+import OrderReady from './componentes/ordenready/ordenready'
 import {database} from './provider.js'
 
 
@@ -33,6 +34,7 @@ class Steward extends Component {
     this.handleClickBreakfast = this.handleClickBreakfast.bind(this); 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFirebase = this.handleFirebase.bind(this);
+    this.handleDeleteItem = this.handleDeleteItem.bind(this);
     
   }
 
@@ -94,34 +96,51 @@ handleInputChange(event) {
 handleFirebase(){
 
   const order = {
+   state: false, 
    name: this.state.takeOrder.nameClient,
    order: this.state.takeOrder.stateOrder.map((itemOrder)=>{  
     return (itemOrder.item)
   }) 
   }; 
   
-  var newPostKey = database.push().key;
+  let newPostKey = database.push().key;
 
-  var updates = {};
+  let updates = {};
   updates['BQKitchen/'+ newPostKey] = order;
 
  
   return database.update(updates);
 }
 
+handleDeleteItem(props){
+
+  this.setState({
+    ...this.state,
+   takeOrder:{
+    ...this.state.takeOrder,
+    stateOrder: this.state.takeOrder.stateOrder.filter((itemOrder)=>{  
+    return itemOrder !== props
+  }) 
+}
+  });
+
+}
+
+
 
 render() {
 
   let order = this.state.takeOrder.stateOrder.map((itemOrder)=>{
   
-    return <p> {itemOrder.item} ... {itemOrder.price}</p>
+    return <div><button onClick={()=> this.handleDeleteItem(itemOrder)}>X</button><p>{itemOrder.item} ... {itemOrder.price}</p></div>
   }) 
 
     return (
       <div className="App">
-       <NameForm
-        onChange={this.handleChange}
-        />
+      <div className="in-between">
+      <NameForm onChange={this.handleChange}/>
+      <OrderReady/>
+        </div>          
         <SplitPane
           left={  
             <div>
@@ -135,7 +154,7 @@ render() {
             </div>
           }  
           right={
-            <div className="rightFlex">
+            <div className="rightFlex">           
             <Toogle toogleOn={this.state.takeOrder.menuBreakfast} onClick={this.handleClickBreakfast} children='Menú Desayuno'/>
             <Toogle toogleOn={this.state.takeOrder.menuAllday} onClick={this.handleClickDay} children='Menú del Día'/> 
             <MenuBreakfast object={this.state.takeOrder.order} onClickButtons={this.handleInputChange}/>  
