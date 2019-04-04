@@ -14,7 +14,7 @@ class OrderReady extends Component {
         this.seeFirebase = this.seeFirebase.bind(this); 
         this.handleChangeState = this.handleChangeState.bind(this); 
         this.updateFirebase = this.updateFirebase.bind(this);
-      }
+      }    
 
       handleChangeState(){
         this.setState({

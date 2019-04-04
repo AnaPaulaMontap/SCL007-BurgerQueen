@@ -1,6 +1,6 @@
 .order {
-    background-color: #4d515a;
-    color: white;
+    background-color: #efcb68;
+    color: #0d1321;
     padding: 1%;
     text-align: center;
     vertical-align: middle;
@@ -12,7 +12,7 @@
 }
 
 .itemOrder{    
-        background: lightgray;
+        background: #d3d4d9;
         position: absolute;
         right: 0;  
         padding: 2%  
@@ -20,5 +20,5 @@
 
 .orderReady{
     width: 100%;
-    border: 1px black solid;
+    border: 1px #0d1321 solid;
 }

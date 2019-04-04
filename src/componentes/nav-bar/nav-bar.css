@@ -1,6 +1,6 @@
 .nav-button {
-    background-color: #282c34;
-    color: white;
+    background-color: #0d1321;
+    color: #d3d4d9;
     padding: 1%;
     width: 33%;
     display: block;
@@ -10,12 +10,12 @@
     font-size: calc(10px + 2vmin);
   }
 .nav{
-  background-color: #d9d9d9;
+  background-color: #d3d4d9;
   width: 100%;
   display: flex;
 }
 .nav-button:focus{
-  background-color: #a6cb12;
+  background-color: #efcb68;
   color: black
 }
 .logo{

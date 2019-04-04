@@ -12,14 +12,14 @@ html, body, #root {
     float: left;
     width: 30%;
     height: 100%;
-    background: grey;
+    background: #d3d4d9;
   }
   
   .SplitPane-right {
     float: left;
     width: 70%;
     height: 100%;
-    background: lightgray;
+    background: #f0f7ee;
    
   }
   
